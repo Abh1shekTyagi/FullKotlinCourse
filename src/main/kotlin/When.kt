@@ -5,6 +5,18 @@ fun main(){
         checkSomething("hello") -> true
         else -> false
     }
+
+    val arrayWithDifferentDT = arrayOf("abhishek", '1', 5)
+    for(i in arrayWithDifferentDT){
+        print(i)
+        when(i){
+            is Int -> println("$i is int")
+            is String -> println("$i is string")
+            is Char -> println("$i is a char")
+            else -> print("unknown data type")
+        }
+    }
+
     val input = 3
     val anotherWay = when(input){
         1 -> 1

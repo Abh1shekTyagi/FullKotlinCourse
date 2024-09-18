@@ -13,7 +13,7 @@ fun arrayReference(){
     val intArray1 = Array<Int>(4){2}
     println(twoDArray.contentDeepToString())
     println(intArray.contentToString())
-    println(intArray1.contentToString())
+    println(intArray1.joinToString())
 }
 
 fun booleanReference(){
