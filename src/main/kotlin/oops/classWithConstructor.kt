@@ -23,8 +23,30 @@ class Carr(val name: String, modelParam: String, colorParam: String, doorsParam:
     fun joinToString(): String{
         return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
     }
+
+    override fun toString(): String {
+        return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return when{
+            other === this -> true //check if the object is checking for itself
+            other is Carr -> this.toString() == other.toString()
+            else -> false
+        }
+    }
+
+    //when we override the equals method it is generally a good practice to override the hashcode method as well
+    //since hashcode improves the performance in case of collections
+    //when we create a collection of class Carr
+    override fun hashCode(): Int {
+        return name.hashCode() + model.hashCode() + color.hashCode() + doors.hashCode()
+        //we can also use a unique identifier and if that is primitive use the hashcode of that property
+    }
 }
 
+
+//if the Carr is private then we wont be able to write extension function for it. Damn
 fun Carr.contentToString(): String{
     return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
 }
