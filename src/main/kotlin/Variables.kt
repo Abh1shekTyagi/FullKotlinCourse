@@ -9,6 +9,7 @@ fun main() {
 
 fun arrayReference(){
     val twoDArray = Array(4) { i -> IntArray(5) { j -> (i * 5) + 1 + j } }
+    val also = Array(4) { i -> Array(5) { j -> (i * 5) + 1 + j } }
     val intArray = IntArray(4) //initialised to 0
     val intArray1 = Array<Int>(4){2}
     println(twoDArray.contentDeepToString())
@@ -67,8 +68,8 @@ fun numberReference(){
     //The max float value is 3.4028235E38  and min float value is 1.4E-45 and bytes are 4
 
     // type     size(bits)          significant(bits)        Exponent(bits)          decimal(digits)
-    // Float    32                  24                          8                       6-7
-    // Double   64                  53                          11                      15-16
+    // Float    32                  24                       8                       6-7
+    // Double   64                  53                       11                      15-16
 
     val maxDoubleValue = Double.MAX_VALUE
     val minDoubleValue = Double.MIN_VALUE
@@ -87,4 +88,10 @@ fun stringReference(){
     canBeChangedLater = "something else"
     println("Hello $name !")
     println("now the value is $canBeChangedLater")
+
+    // Note that string uses hashcode to check allocate the memory
+    val temp1 = "testing"
+    val temp2 = "testing"
+
+    println("object reference same? ${temp1 === temp2}")
 }

@@ -28,6 +28,8 @@ class Carr(val name: String, modelParam: String, colorParam: String, doorsParam:
         return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
     }
 
+
+    //we should override this equals method to compare two objects of this class
     override fun equals(other: Any?): Boolean {
         return when{
             other === this -> true //check if the object is checking for itself
@@ -46,7 +48,7 @@ class Carr(val name: String, modelParam: String, colorParam: String, doorsParam:
 }
 
 
-//if the Carr is private then we wont be able to write extension function for it. Damn
+//if the Carr is private then we won't be able to write extension function for it. Damn
 fun Carr.contentToString(): String{
     return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
 }

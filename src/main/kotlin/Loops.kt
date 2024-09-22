@@ -25,6 +25,13 @@ fun main(){
         print(i)
     }
 
+    //variable step
+    var j = 19
+    for(i in 100 downTo 1 step j){ // it does not reuse j after using it one time for step.
+        j++
+        println("variable step with step $j and value $i")
+    }
+
 
     //---------------------------------- when we do not know the number of times loops should run ----
     // while(SomeCondition){ code }
@@ -40,6 +47,7 @@ fun main(){
     //when we want to run something at least once
     do{
         print(number)
+        number++
     }while (number < 12)
 
 
@@ -54,7 +62,7 @@ fun main(){
     }
 
     //while loop with label
-    outerLoop@ while (number < 26){
+    outerLoop@while (number < 26){
         number ++
         while (count < 5){
             count ++
