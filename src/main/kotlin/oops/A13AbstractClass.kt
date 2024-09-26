@@ -23,7 +23,7 @@ fun main(){
 abstract class AbstractClass(val text: String){
     val anotherProperty = "Some random text"
 
-    abstract fun move() // we want the child class to define this so it has no body.
+    abstract fun move() // we want the child class to define this so, it has no-body.
     abstract fun stop()
 
     fun printText(){

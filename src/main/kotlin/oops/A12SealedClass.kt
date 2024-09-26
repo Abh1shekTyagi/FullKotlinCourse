@@ -32,6 +32,7 @@ fun getData(result: Result){
         is Result.Failure.Error -> result.printMessage()
         is Result.Failure.Success -> result.printMessage()
         is Result.Success -> result.printMessage()
+        else -> {}
     }
 }
 

@@ -1,3 +1,5 @@
+package basics
+
 fun main(){
     var stringValue: String = "Something"
     println(stringValue.something())
@@ -26,9 +28,7 @@ fun someFunction(vararg dosome: Any){
 
 
 //extension function
-fun String.something(): Boolean{
-    return this == "Something"
-}
+fun String.something() =  this == "Something"
 
 //inline function
 fun getMax(a: Int, b: Int) = if(a > b) a else b

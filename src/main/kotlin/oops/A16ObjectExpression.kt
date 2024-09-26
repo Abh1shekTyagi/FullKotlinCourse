@@ -1,0 +1,31 @@
+package oops
+
+
+//we will use object expression to make an anonymous class for the interface ClickListener
+fun main(){
+
+    val onClickListener = OnClickListener()
+    //without anonymous class
+    //we have to inherit the interface to create a class and then pass it as parameter
+    val circularButton = Button("Send",34323,onClickListener)
+
+
+    //with anonymous class
+    val button = Button("Done", 12343, object : ClickListener{
+        override fun onclick() { //we will override our own onclick method here, no need to create a class.
+
+        }
+    })
+
+}
+
+class OnClickListener(): ClickListener{
+    override fun onclick() {
+        //
+    }
+}
+class Button(val text: String, val id: Int, clickListener: ClickListener )
+
+interface ClickListener{
+    fun onclick()
+}

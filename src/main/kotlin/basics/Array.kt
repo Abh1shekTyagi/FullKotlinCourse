@@ -1,3 +1,5 @@
+package basics
+
 fun main(args: Array<String>){
     val simpleArray = arrayOf("abhishek","tyagi","is","my","name")
     val arraySize = simpleArray.size

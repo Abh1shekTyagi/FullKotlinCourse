@@ -78,7 +78,7 @@ open class Vehicle(val name: String){
 //we can not have same name properties or functions in the child class, unless it is private in parent class.
 private class Bike(nameParams: String, val color: String, val engines: Int): Vehicle(nameParams){
 
-    //we have to user override to use the parent class method.
+    //we have to override to use the parent class method.
     override fun move(){
         println("The Bike is riding")
     }

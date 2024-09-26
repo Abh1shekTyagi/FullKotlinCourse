@@ -1,4 +1,4 @@
-
+package basics
 fun main() {
     stringReference()
     numberReference()
@@ -18,11 +18,11 @@ fun arrayReference(){
 }
 
 fun booleanReference(){
-    val myBoolean: Boolean = false
+    val myBoolean: Boolean = false //uses one byte
     println("Boolean is $myBoolean")
 }
 fun characterReference(){
-    val myCharValue = 'a'
+    val myCharValue = 'a' //uses one byte
     println("my character is $myCharValue")
     val myString = "Abhishek Tyagi"
     for (char in myString){
