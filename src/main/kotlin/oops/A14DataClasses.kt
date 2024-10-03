@@ -32,7 +32,7 @@ fun main(){
     println(car.contentToString() === car2.contentToString()) // false
     println(car.contentToString() == car.joinToString()) //true,
     // Note contentToString is an extension function and joinToString is a class methods of Carr
-    //Since this is a custom class and kotlin doesn't provide the definition by itself
+    // Since this is a custom class and kotlin doesn't provide the definition by itself
     println(car.contentToString() == car.contentToString()) //true, we can use
 
     println("car.hashcode() == car2.hashCode() ${car.hashCode() == car2.hashCode()}") //true

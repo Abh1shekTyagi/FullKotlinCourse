@@ -4,14 +4,14 @@ package oops
 //We can not use enum class because they can not have properties of their own,
 // the enum class has the property and not the individual objects in the enum class
 
-enum class ApiResponse{
+enum class ApiResponse{ //all are of same type
     SUCCESS,
     ERROR // we can not define resolvable /non resolvable errors
 }
 
 fun main(){
-    val failureSuccess = Result.Failure.Success(ApiResponse.SUCCESS)
-    val failureError = Result.Failure.Error(ApiResponse.ERROR)
+    val failureSuccess = Result.Failure.HttpError(ApiResponse.SUCCESS)
+    val failureError = Result.Failure.ServerError(ApiResponse.ERROR)
     val success = Result.Success("This is result success")
     val progress= Progress("this is progress outside the result")
     //val failure = Result.Failure("This is result failure") -> sealed class can not be instantiated
@@ -29,8 +29,14 @@ fun main(){
 fun getData(result: Result){
     when(result){
         is Progress -> result.printMessage()
-        is Result.Failure.Error -> result.printMessage()
-        is Result.Failure.Success -> result.printMessage()
+        is Result.Failure.ServerError -> result.printMessage()
+        is Result.Failure.HttpError -> {
+            result.printMessage()
+            val error = Result.Failure.HttpError(ApiResponse.ERROR)
+            error.print()
+            error.apiResponse
+
+        }
         is Result.Success -> result.printMessage()
         else -> {}
     }
@@ -39,33 +45,38 @@ fun getData(result: Result){
 fun sealedWithAny(item: Any){
     when(item) {
         is Progress -> item.printMessage()
-        is Result.Failure.Error -> item.printMessage()
-        is Result.Failure.Success -> item.printMessage()
+        is Result.Failure.ServerError -> item.printMessage()
+        is Result.Failure.HttpError -> item.printMessage()
         is Result.Success -> item.printMessage()
         else -> println("Unknown type")
             //item.printMessage() won't work here
     }
 }
 
-sealed class Result(private val message: String){
+sealed class Result(private val message: String, ){
 
-
+    //param is just a constructor parameter, and it is not stored as a field/property of the class.
+    // It is only available during the execution of the constructor, not outside of it,
+    // such as inside member functions.
     fun printMessage(){
-        println(message)
+        println(message) //if message was a param it wouldn't have been accessed here
     }
     class Success(message: String): Result(message){
 
     }
-    sealed class Failure(message: String): Result(message) {
-        class Success(apiResponse: ApiResponse): Failure(apiResponse.name){
+    sealed class Failure(messages: String): Result(messages) {
+        class HttpError(val apiResponse: ApiResponse): Failure(apiResponse.name){
+            fun print(){
+                println("$apiResponse") //
+            }
         }
-        class Error(apiResponse: ApiResponse): Failure(apiResponse.name){
+        class ServerError(apiResponseParam: ApiResponse): Failure(apiResponseParam.name){
 
         }
     }
 
     class NotInherited(){
-        //just a inner class
+        //just an inner class
     }
 }
 

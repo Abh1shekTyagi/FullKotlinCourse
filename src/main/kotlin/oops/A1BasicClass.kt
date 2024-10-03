@@ -1,6 +1,6 @@
 package oops
 
-fun main(){
+fun main() {
     val myCar = Car()
     myCar.name = "Maybach"
     myCar.model = "S 680 4MATIC"
@@ -22,18 +22,23 @@ fun main(){
 
 
 //Since this is a blueprint the properties will change for each object
-class Car{
+class Car {
     //properties
     var name = "" // has to be initialised
     var model = ""
     var color = ""
     var doors = 0
+    val somethingLike: String // we have to specify the type and then we can assign the value in init, it is a val
 
-    fun move(){
+    init {
+        somethingLike = "abhishek"
+    }
+
+    fun move() {
         println("The car is moving now")
     }
 
-    fun stop(){
+    fun stop() {
         println("The car has stopped now")
     }
 }

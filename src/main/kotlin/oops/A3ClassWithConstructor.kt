@@ -20,6 +20,9 @@ class Carr(val name: String, modelParam: String, colorParam: String, doorsParam:
     // a valid input and then assigning it to the property
     val doors = doorsParam
 
+    fun accessParams(){
+//        println("$modelParam") params are not accessible here
+    }
     fun joinToString(): String{
         return "name = ${this.name}, model = ${this.model}, color = ${color}, doors = $doors"
     }

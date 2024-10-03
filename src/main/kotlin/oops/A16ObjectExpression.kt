@@ -11,21 +11,39 @@ fun main(){
 
 
     //with anonymous class
-    val button = Button("Done", 12343, object : ClickListener{
-        override fun onclick() { //we will override our own onclick method here, no need to create a class.
+    val button = Button("Done", 12343, object : ClickListenerInterface{
+        //we will override our own onclick method here, no need to create a class.
+        override fun onClickA(inputParam: String) {
+            println(inputParam)
+        }
 
+        override fun onClickB(inputParam: String) {
+            println(inputParam)
         }
     })
 
+    button.callBacks()
+
 }
 
-class OnClickListener(): ClickListener{
-    override fun onclick() {
-        //
+class OnClickListener(): ClickListenerInterface{
+    override fun onClickA(inputParam: String) {
+        println(inputParam)
+    }
+
+    override fun onClickB(inputParam: String) {
+        println(inputParam)
+    }
+
+}
+class Button(val text: String, val id: Int, private val clickListener: ClickListenerInterface ){
+    fun callBacks(){
+        clickListener.onClickA("String")
+        clickListener.onClickB("String")
     }
 }
-class Button(val text: String, val id: Int, clickListener: ClickListener )
 
-interface ClickListener{
-    fun onclick()
+interface ClickListenerInterface{
+    fun onClickA(inputParam: String)
+    fun onClickB(inputParam: String)
 }

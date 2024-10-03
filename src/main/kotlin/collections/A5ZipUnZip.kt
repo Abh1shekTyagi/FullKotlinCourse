@@ -1,6 +1,6 @@
 package collections
 
-// Zip is used to create pairs from to different lists
+// Zip is used to create pairs from two different lists
 
 
 fun main(){
@@ -16,13 +16,13 @@ fun main(){
 
     //we can also unzip the pairs array
     val pair: Array<Pair<Int,Long>> = arrayOf(1 to 24, 2 to 23, 3 to 43, 432 to 53)
-    val firstPairList = pair.unzip().first.toIntArray()
+    val firstPairList = pair.unzip().first
     val secondPairList = pair.unzip().second.toLongArray()
+    val (keys, values) = pair.unzip() //we can do like this also.
 
-    println(pair.unzip())
-    println(firstPairList.contentToString())
+    println(pair.unzip()) //it will split into two pair, list of first pair and list of second pair.
+    println(firstPairList.joinToString())
     println(secondPairList.contentToString())
 
-    val (keys, values) = pair.unzip()
 
 }

@@ -2,7 +2,7 @@ package oops
 
 
 //Inheritance is a concept in kotlin in which you can create a class using another class
-//meaning you will get all the functions and properties that the class already has and you can add more
+//meaning you will get all the functions and properties that the class already has and, you can add more
 //function that are specific to the new class
 
 //new class is called the child class
@@ -12,10 +12,12 @@ package oops
 fun main(){
 
     // car can not be of type Bike or Airplane
+//    val car: Bike = Vehicle("Car") //trying to typecast to child class
     val car = Vehicle("Car")
     val airplane = Airplane("airplane", "Red and Green",4)
 
     //    bike.testing() -> we created a child class but changed it to parent class so testing is not accessible
+    //this bike has access to only the functions and properties of parent vehicle
     val bike: Vehicle = Bike("BMW", "Black", 1)
     val bike2 = Bike("Audi", "Black",1)
 
@@ -26,7 +28,6 @@ fun main(){
     car.move()
     car.stop()
     car.root()
-
 
     airplane.move()
     airplane.stop()

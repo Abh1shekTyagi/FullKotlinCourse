@@ -7,7 +7,7 @@ fun main(){
     println(stringValue.something())
 
 
-    val array = Array(5){i -> "$i"}
+    val array = Array(5){i -> "$i"} //array of string
     someFunction(4,5, *array)
 
     println(getMax(25,3))
@@ -16,6 +16,7 @@ fun main(){
 
     defaultParamsFunction(nothing = "now something") //named parameter calling
     defaultValueFrmFunction()
+
 }
 
 //function with variable number of arguments.
@@ -43,8 +44,9 @@ fun defaultParamsFunction(something: String = "some", nothing: String = ""){
     println("This is the default param $something")
 }
 
-fun defaultValueFrmFunction(trying: String = getMyString()){
+fun defaultValueFrmFunction(trying: String = getMyString()){//we can specify a function to return a value
     println(trying)
 }
 
 fun getMyString() = "something from the world"
+

@@ -1,4 +1,5 @@
 package basics
+
 fun main() {
     stringReference()
     numberReference()
@@ -7,25 +8,28 @@ fun main() {
     arrayReference()
 }
 
-fun arrayReference(){
+fun arrayReference() {
     val twoDArray = Array(4) { i -> IntArray(5) { j -> (i * 5) + 1 + j } }
     val also = Array(4) { i -> Array(5) { j -> (i * 5) + 1 + j } }
+//    val somethingLIke = Array<String>(4) { Array<String>(3) {} } // this is not allowed
+    val thisIsAllowed = Array<Array<Int>>(4) { Array<Int>(3) { it } } // this is allowed
     val intArray = IntArray(4) //initialised to 0
-    val intArray1 = Array<Int>(4){2}
+    val intArray1 = Array<Int>(4) { 2 }
     println(twoDArray.contentDeepToString())
     println(intArray.contentToString())
     println(intArray1.joinToString())
 }
 
-fun booleanReference(){
+fun booleanReference() {
     val myBoolean: Boolean = false //uses one byte
     println("Boolean is $myBoolean")
 }
-fun characterReference(){
+
+fun characterReference() {
     val myCharValue = 'a' //uses one byte
     println("my character is $myCharValue")
     val myString = "Abhishek Tyagi"
-    for (char in myString){
+    for (char in myString) {
         println(char)
     }
     myString.map {
@@ -33,7 +37,7 @@ fun characterReference(){
     }
 }
 
-fun numberReference(){
+fun numberReference() {
     val number = 22
 
     val maxByteValue = Byte.MAX_VALUE
@@ -55,6 +59,7 @@ fun numberReference(){
     println("The max int value is $maxIntegerValue and min int value is $minIntegerValue and number of bytes are $bytesInInteger")
     //The max int value is 2147483647 and min int value is -2147483648 and number of bytes are 4
 
+    //it behaves like int with operations, 23L / 2  = 11L
     val maxLongValue = Long.MAX_VALUE
     val minLongValue = Long.MIN_VALUE
     val bytesInLong = Long.SIZE_BYTES
@@ -81,9 +86,9 @@ fun numberReference(){
     val unsignedLong: ULong = 22u
 }
 
-fun stringReference(){
-    val name = "Abhishek"
-    var canBeChangedLater = "temp"
+fun stringReference() {
+    val name = "Abhishek" // val can not be changed
+    var canBeChangedLater = "temp" //var can be changed
     println("$canBeChangedLater is this")
     canBeChangedLater = "something else"
     println("Hello $name !")

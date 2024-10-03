@@ -27,4 +27,13 @@ fun main(){
         println(it.lastName) //this will print 3 items because user class equalsTo method is not overridden
     }
     //if it were a data class then we would have got only distinct items
+
+    val dis1 = Distinct("Abhishek")
+    val dist = Distinct("Abhishek",0)
+
+    val set = setOf(dis1,dist)
+    println(set)//printed 1 element only.
 }
+
+
+data class Distinct(val name: String, val age: Int = 0)

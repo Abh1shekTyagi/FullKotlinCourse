@@ -36,7 +36,8 @@ class FormattedDelegate(private var stringName: String): ReadWriteProperty<Any, 
     }
 
 }
-class App(nameParam: String): A by DelegateA(), B by DelegateB(){ //we can not inherit from two class but we can use delegate to
+class App(nameParam: String): A by DelegateA(), B by DelegateB(){ //we can not inherit from two classes,
+    // but we can use delegate to
     //access the class implementation for specific interfaces.
 
     val name by FormattedDelegate(nameParam)

@@ -9,6 +9,9 @@ package oops
 
 //Question
 //Where are abstract classes and interfaces use what how to choose?
+//Abstract class -> They are used to represent an abstract concept or a base class that provides a common definition
+// of a base class that multiple derived classes can share.
+//An interface defines a contract that classes can implement. It can contain abstract methods, properties
 fun main(){
     val fan = Fan("Abhishek")
     fan.move()
@@ -26,7 +29,7 @@ abstract class AbstractClass(val text: String){
     abstract fun move() // we want the child class to define this so, it has no-body.
     abstract fun stop()
 
-    fun printText(){
+    fun printText(){//method with implementation
         println("The text is $text")
     }
 }

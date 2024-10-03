@@ -7,7 +7,7 @@ package collections
 fun main(){
     //Immutable
     val immutableList = listOf<String>("Abhishek", "Tyagi", "is", "my", "name")
-    println("first element of immutableList is ${immutableList[0]}")
+    println("first element of immutableList is ${immutableList[0]}") //prone to index out of bound
 
     val mutableList = mutableListOf("Abhishek","tyagi","is","my","name")
 

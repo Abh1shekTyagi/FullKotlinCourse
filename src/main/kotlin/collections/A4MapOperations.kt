@@ -18,7 +18,7 @@ fun main(){
     println(map.mapKeys { Pair(it.key * 100 , it.value)}) // we can access the keys separately, we can also access values inside
     println(map.mapValues { Pair(it.key * 40 , it.value)}) // we can access the values separately, we can also access keys inside
 
-    //check the output once it is quite interesting
+    //check the output once, it is quite interesting
 
     val mapKeys = map.mapKeys { it.key* 10 } // creates a new map with specified keys
     val mapValues = map.mapValues { it.value.uppercase()} // creates a new map with specified values

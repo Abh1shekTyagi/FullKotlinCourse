@@ -10,23 +10,26 @@ fun main() {
 
     //enums with when statement
     val direction = Directions.EAST
-    when(direction){
+    when (direction) {
         Directions.NORTH -> {}
         Directions.SOUTH -> {}
         else -> {}
     }
 }
 
+//enum can not have different type of objects with their own properties and methods like sealed class
+//enum class can also not be inherited by any other class unlike sealed class
 enum class Directions(val angle: Int) {
     NORTH(0),  //these are the instances(object) of the class
+
     // Directions so if we have a properties
     //in the constructor then we have to call it at the time of creating the objects
     SOUTH(180),
     EAST(90),
-    WEST(270) ; // we need to separate the enum with function by semicolon
+    WEST(270); // we need to separate the enum with function by semicolon
 
     //we can also have functions
-    fun directionAngle(){
+    fun directionAngle() {
         println("The angle for $this is $angle")
     }
 }

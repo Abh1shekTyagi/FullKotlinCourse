@@ -12,6 +12,7 @@ fun main(){
 
 private class Users{
     companion object{
+        //used to create static members in a class
         //class variables and class functions, they do not belong to the instance of the class
         //or the object of the class but to the class itself
         const val count = 24

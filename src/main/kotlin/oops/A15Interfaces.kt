@@ -8,7 +8,8 @@ package oops
 //We define what in an interface and how is implemented by the child class
 //Interfaces can not be instantiated they are created to be inherited by other class
 
-//In android, setOnClickListener is one of the example, text , image, button can implement what to do when it is clicked
+//In android, setOnClickListener is one of the example, text , image, button can implement what to do
+// when it is clicked
 
 fun main(){
     val car = Cars()

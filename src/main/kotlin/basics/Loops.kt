@@ -55,16 +55,16 @@ fun main(){
 
     //nested loops
     var count = 0
-    while(number <20){
+    while(number < 20){
         number++
-        while(count <5){
+        while(count < 5){
             count ++
             if(count ==4) break //will break the inner loop
         }
     }
 
     //while loop with label
-    outerLoop@while (number < 26){
+    outerLoop@ while (number < 26){
         number ++
         while (count < 5){
             count ++
