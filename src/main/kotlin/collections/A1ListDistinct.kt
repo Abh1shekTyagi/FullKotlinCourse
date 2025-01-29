@@ -20,5 +20,7 @@ fun main(){
     mutableList.remove("my") //using an element itself
 
 
+    mutableList.distinct() //return the first element in case of duplicate
+    //maintains the order
 
 }

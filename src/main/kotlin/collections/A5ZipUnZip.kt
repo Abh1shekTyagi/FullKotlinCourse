@@ -24,5 +24,8 @@ fun main(){
     println(firstPairList.joinToString())
     println(secondPairList.contentToString())
 
-
+    val map = mapOf(1 to "A", 2 to "B", 3 to "C") //doesn't work on map so we can use keys, values in maps
+    val key = map.keys
+    val value = map.values
+    println("$key $value")
 }

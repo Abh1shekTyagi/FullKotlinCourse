@@ -4,7 +4,7 @@ package collections
 //drop will drop the elements in the list
 //take will take the elements in the list
 //slice will give the elements specified in the predicate.
-//windows are like chunk but the window is created with respect to each element
+//windows are like chunk but the window is created with respect to each element, taking itself and next window of size specified
 //elementAt returns a value from specified index
 //first() returns the first value, it can also take predicate and return the first value satisfying the predicate.
 //last() returns the last value, it can also take predicate and return the last value satisfying the predicate
@@ -13,7 +13,8 @@ package collections
 fun main() {
     val numbers = listOf(10, 2, 3, 4, 5, 60, 70)
     val chunkedList = numbers.chunked(3) { it + List(3 - it.size) { 0 } }
-    println(numbers.chunked(3) { it + List(3 - it.size) { 0 } })
+    println(numbers.chunked(3) { it + List(3 - it.size) { 0 } })//if you want to append zeros
+    println(numbers.chunked(3){it}) //prints only the last number in the list, somewhat unusual behaviour
     println(numbers.chunked(3))
     println(numbers.chunked(3){it.sum()}) //will sum all elements in the chunk and return a value, list of summed values
 

@@ -4,7 +4,8 @@ package collections
 //key is the lambda result and values are the list of values for which this lambda function is returned
 
 
-fun main(){
+fun main() {
+
 
     val cities = listOf(
         City("New York", "USA"),
@@ -67,8 +68,26 @@ fun main(){
         City("Yekaterinburg", "Russia"),
         City("Kazan", "Russia")
     )
+    val groupByItems = cities.groupBy(keySelector = { it.country })
+    val listOfFlattenMap = groupByItems.flatMap { listOf(Country(it.key)) + (it.value) }
+    val numbers = listOf(1, 2, 3, 4, 5, 6)
 
-    println(cities.groupBy { it.country })
-    println(cities.groupBy(keySelector = {it.country}, valueTransform = {it.name})) //uses groupByTo internally
-//    cities.groupByTo(destination = {}, keySelector = {it.country}, valueTransform = {it.name})
+    val grouped = numbers.groupBy { it % 2 == 0 } // Group by even/odd
+
+    println(grouped)
+    println(groupByItems)
+    println(listOfFlattenMap)
+    //now we can use item_view_type on this list
+//    println(listOfFlattenMap.map {
+//        when (it) {
+//            is String -> "countryName"
+//            is City -> "Cities list"
+//            else -> "Unknown"
+//        }
+//    })
+//    //better to take it as a map and then use submit list to submit by key value item type.
+//    println(listOfFlattenMap)
+//    println(cities.groupBy { it.country })
+//    println(cities.groupBy(keySelector = { it.country }, valueTransform = { it.name })) //uses groupByTo internally
+////    cities.groupByTo(destination = {}, keySelector = {it.country}, valueTransform = {it.name})
 }

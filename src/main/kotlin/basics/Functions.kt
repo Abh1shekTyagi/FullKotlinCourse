@@ -7,6 +7,10 @@ fun main(){
     println(stringValue.something())
 
 
+    val arrayA = Array(5){i -> "$i"}
+    varArgsFunction("2","3",*arrayA)
+
+
     val array = Array(5){i -> "$i"} //array of string
     someFunction(4,5, *array)
 
@@ -16,6 +20,10 @@ fun main(){
 
     defaultParamsFunction(nothing = "now something") //named parameter calling
     defaultValueFrmFunction()
+
+}
+
+fun varArgsFunction(vararg Something: String){
 
 }
 

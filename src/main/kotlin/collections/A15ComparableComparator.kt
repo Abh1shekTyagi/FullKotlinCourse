@@ -80,8 +80,10 @@ fun main(){
     cities.sortedWith(compareBy<City> {it.country}.thenBy { it.name }).forEach { println( "country =${it.country}, name = ${it.name}") }
     //we can also use specific property using sortedBy method no need to extend comparable, comparator interfaces
     cities.sortedBy { it.name }
+//    cities.sortedWith(compareBy<City> { it.country }.thenBy { it.name })
 }
 
+data class Country(val name: String)
 data class City(val name: String, val country: String): Comparable<City>{
     override fun compareTo(other: City): Int {
         return when{

@@ -4,13 +4,18 @@ package collections
 //in maps the keys are a set and last duplicate key's value is overridden since key is using hash internally
 
 fun main(){
-    val immutableMap = mapOf(1 to "abhishek", 22 to "tyagi", 22 to "name")
+    val immutableMap = mapOf(1 to "abhishek", 22 to "tyagi", 22 to "name")//name overrides tyagi
     immutableMap.forEach { (t, u) -> println("key is $t and value is $u") }
 
+    val maps = mutableMapOf("hello" to "something")
+    maps["hello"] = "world"
+    println(maps)
 
     val mutableMap = mutableMapOf(1 to "abhishek")
     mutableMap[23] = "tyagi"
     mutableMap[42] = "tyagi"
 
     mutableMap.forEach { (t, u) -> println("[$t] = [$u]") }
+
+
 }

@@ -6,6 +6,7 @@ fun main() {
     //we can try let and run also
     text = text?.let { "let" } ?: run { "run" }
     text = text?.let { "let" } ?: "without run" // we can not put run as well, what is the difference then?
+    //the differnce is that we can not use direct bracket {} to define more code.
     val anotherText = text2 ?: "The text is null"
     print(anotherText)
 }
