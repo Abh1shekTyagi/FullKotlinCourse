@@ -10,10 +10,20 @@ fun main() {
 
 fun arrayReference() {
     val twoDArray = Array(4) { i -> IntArray(5) { j -> (i * 5) + 1 + j } }
-    val also = Array(4) { i -> Array(5) { j -> (i * 5) + 1 + j } }
-//    val somethingLIke = Array<String>(4) { Array<String>(3) {} } // this is not allowed
-    val thisIsAllowed = Array<Array<Int>>(4) { Array<Int>(3) { it } } // this is allowed
+    val also = Array(4) { i ->
+        Array(5) { j ->
+            (i * 5) + 1 + j //value
+        }
+    }
+    val somethingLIke = Array<Array<String>>(4) {
+        Array<String>(3) {
+            "$it"
+        }
+    }
+    val thisIsAllowed = Array<Array<Int>>(4) { Array<Int>(3) { it } }
     val intArray = IntArray(4) //initialised to 0
+    val intArrayI = IntArray(4) { it }//initialised to it
+    val intArrayv = IntArray(4) { 3 }//initialised to 3
     val intArray1 = Array<Int>(4) { 2 }
     println(twoDArray.contentDeepToString())
     println(intArray.contentToString())

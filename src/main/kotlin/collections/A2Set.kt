@@ -15,6 +15,7 @@ fun main(){
 
 //    mutableSet.get(0) //we can not get items like this also
     mutableSet.forEach{}
+    mutableSet.map {  }
 
 
     val user = User(lastName = "Abhishek")

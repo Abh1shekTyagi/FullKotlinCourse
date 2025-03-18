@@ -1,15 +1,21 @@
 package basics
 
+import Generics.printData
+
 fun main(args: Array<String>) {
     //we can specify specific type also like , intArrayOf, floatArrayOf,  etc
     val simpleArray = arrayOf("abhishek", "tyagi", "is", "my", "name")
+    val intArrayR = IntArray(5) { i ->
+        i + 1
+    }
+    val intArrayK = intArrayOf(3,4,5,6,6,7)
     val intArray = floatArrayOf(1f, 2f, 3f)
     val arraySize = simpleArray.size
     print(simpleArray[4])
     intArray.get(0)
     intArray.elementAt(0)
 
-    val matrix: Array<IntArray> = arrayOf(intArrayOf(1,2,3), intArrayOf(1,3,6))
+    val matrix: Array<IntArray> = arrayOf(intArrayOf(1, 2, 3), intArrayOf(1, 3, 6))
 
     //array with different data types
     val arrayWithDifferentDT = arrayOf("abhishek", '1', 5)

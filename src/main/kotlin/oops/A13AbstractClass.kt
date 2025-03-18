@@ -12,7 +12,7 @@ package oops
 //Abstract class -> They are used to represent an abstract concept or a base class that provides a common definition
 // of a base class that multiple derived classes can share.
 //An interface defines a contract that classes can implement. It can contain abstract methods, properties
-fun main(){
+fun main() {
     val fan = Fan("Abhishek")
     fan.move()
     fan.stop()
@@ -23,24 +23,26 @@ fun main(){
 }
 
 
-abstract class AbstractClass(val text: String){
+abstract class AbstractClass(val text: String) {
     val anotherProperty = "Some random text"
 
     abstract fun move() // we want the child class to define this so, it has no-body.
     abstract fun stop()
 
-    fun printText(){//method with implementation
+    fun printText() {//method with implementation
         println("The text is $text")
     }
 }
 
-class Fan(val name: String): AbstractClass(name){
+class Fan(val name: String) : AbstractClass(name) {
     override fun move() {
         println("Move")
+        printText()//we can access it directly.
     }
 
     override fun stop() {
         println("Stop")
     }
+
 
 }

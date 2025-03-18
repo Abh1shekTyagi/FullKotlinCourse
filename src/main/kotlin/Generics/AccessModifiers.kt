@@ -20,6 +20,6 @@ internal class XYZ{
 
 //Modifier	Class	Package	    Module	Subclass	World
 //public	✔️	    ✔️	        ✔️	    ✔️	        ✔️
-//internal	✔️	    ✔️	        ✔️	    ✖️	        ✖️
+//internal	✔️	    ✔️	        ✔️	    ✔️	        ✖️
 //protected	✔️	    ✖️	        ✖️	    ✔️	        ✖️
 //private	✔️	    ✖️	        ✖️      ✖️	        ✖️

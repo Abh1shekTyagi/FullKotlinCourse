@@ -12,7 +12,7 @@ fun main(){
 
 
     val array = Array(5){i -> "$i"} //array of string
-    someFunction(4,5, *array)
+    someFunction("4",5, *array)
 
     println(getMax(25,3))
     println(getMax(23.1,23.3))
@@ -28,7 +28,7 @@ fun varArgsFunction(vararg Something: String){
 }
 
 //function with variable number of arguments.
-fun someFunction(vararg dosome: Any){
+fun someFunction(first: String, vararg dosome: Any){
     dosome.map {
         println(it)
     }

@@ -5,6 +5,8 @@ package collections
 
 fun main() {
     val listOfList = listOf(setOf(1, 2, 3), setOf(2, 3, 4, 5, 6), setOf(1, 2, 3))
+    val ints = listOfList[0]
+    println(ints)
     println(listOfList.flatten())//note flatten will only work if the inside list is of same type
 
     val listOfAny =

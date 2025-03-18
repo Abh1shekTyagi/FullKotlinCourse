@@ -13,6 +13,8 @@ fun main(){
 
     val zipList = names zip classes
     println(zipList)
+    zipList.get(0).first
+    zipList[0].second
 
     //we can also unzip the pairs array
     val pair: Array<Pair<Int,Long>> = arrayOf(1 to 24, 2 to 23, 3 to 43, 432 to 53)
